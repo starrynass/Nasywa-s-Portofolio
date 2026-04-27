@@ -244,10 +244,9 @@ section {
     font-size: 7rem;
     margin: 5rem 0;
 }
-
 .services {
     background-color: var(--bg-color);
-    color: black;
+    color: black; /* Pastikan warna teks terbaca dengan background */
 }
 
 .services h2 {
@@ -257,57 +256,65 @@ section {
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: center;
-    gap: 2.5rem;
+    gap: 2rem; /* Jarak antar card sedikit dirapatkan */
+    align-items: stretch; /* PENTING: Membuat semua card memiliki tinggi yang sama rata */
 }
 
 .service-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     background-color: var(--main-color);
-    height: 400px;
-    border-radius: 3rem;
+    border-radius: 1.5rem; /* Lengkungan diperhalus agar lebih modern */
     cursor: pointer;
-    border: 5px solid transparent;
+    border: 3px solid transparent;
     transition: 0.4s ease-in-out;
+    height: 100%; /* Mengganti height: 400px agar tinggi card menyesuaikan grid */
+    overflow: hidden; /* Mencegah konten keluar dari lengkungan border */
 }
 
 .service-box:hover {
-    background: var(--second-bg-color-);
+    background: var(--second-bg-color); /* Pastikan nama variabel typo "color-" diperbaiki */
     color: var(--main-color);
-    border: 5px solid var(--main-color);
-    transform: scale(1.03);
-    box-shadow: 0 0 15px var(--main-color),
-                0 0 30px var(--main-color);
+    border: 3px solid var(--main-color);
+    transform: translateY(-5px); /* Efek hover naik ke atas sedikit (lebih elegan dari sekadar membesar) */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow yang lebih halus */
 }
 
 .service-info {
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: center;
     align-items: center;
-    padding: 3rem;
+    padding: 2rem; /* Padding dikecilkan dari 3rem agar tidak terlalu sempit ke tengah */
+    height: 100%; /* Memastikan isi memenuhi card */
 }
+
 .service-info img {
+    width: 100%;
     max-width: 250px;
-    border-radius: 2rem;
-    object-fit: cover;
-    padding: 1rem;
+    height: 160px; /* PENTING: Tinggi gambar disamaratakan */
+    object-fit: cover; /* Membuat gambar menyesuaikan kotak tanpa terdistorsi */
+    border-radius: 1rem;
+    margin-bottom: 1.5rem; /* Mengganti padding dengan margin untuk jarak ke teks */
 }
+
 .service-info h4 {
-    font-size: 2rem;
-    margin: 2rem 0;
-    font-weight: 600;
+    font-size: 1.8rem; /* Ukuran font diperkecil agar pas di card */
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
+
 .service-info p {
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.7;
+    font-size: 1.5rem; /* Diperkecil dari 1.4rem agar nyaman dibaca */
+    font-weight: 500;
+    line-height: 1.6;
+    margin-top: auto; /* Jika teks pendek, ini akan mendorong margin agar elemen tetap rapi */
 }
+
+/* Jika menggunakan icon bx, sesuaikan ukurannya */
 .service-info i {
-    font-size: 8rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .projects {
